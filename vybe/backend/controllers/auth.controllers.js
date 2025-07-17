@@ -1,5 +1,5 @@
 import genToken from '../config/token.js';
-import User from '../models/User.js';
+import User from '../models/user.model.js';
 import bcrypt from 'bcryptjs';
 
 export const signUp = async (req,res)=>{
@@ -49,7 +49,7 @@ export const signIn = async (req,res)=>{
     try {
         const {password,userName}=req.body
 
-        const findByEmail = await User.findOne({email})
+        // const findByEmail = await User.findOne({email})
         
         const user = await User.findOne({userName})
         if(!user){
